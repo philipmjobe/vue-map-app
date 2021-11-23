@@ -29,7 +29,12 @@ export default {
         center: [-82.6963, 40.3045], // starting position [lng, lat]
         zoom: 9, // starting zoom
       });
-      console.log(map);
+      const popup = new mapboxgl.Popup({ offset: 25 }).setText(
+        "The geographical center of Ohio. We have a rock! -Everyone Who Has Ever Lived There"
+      );
+
+      const marker1 = new mapboxgl.Marker().setLngLat([-82.6963, 40.3045]).setPopup(popup).addTo(map);
+      console.log(map, marker1, popup);
     },
   },
 };
